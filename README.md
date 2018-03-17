@@ -1,7 +1,7 @@
 # DPStyle
 样式工具
 
-# Installation
+## Installation
 ### Cocoapods
 ```
 pod 'DPStyle'
