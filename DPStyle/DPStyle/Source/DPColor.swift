@@ -6,12 +6,20 @@
 //  Copyright © 2018年 dancewithpeng@gmail.com. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIColor
 
-// MARK: - Hex Handing
+
+// UIColor的扩展，提供16进制色值设置
 public extension UIColor {
     
-    private convenience init?(hex: Int, alpha: CGFloat = 1) {
+    
+    /// 根据16进制色值创建颜色对象的便捷方法
+    ///
+    /// - Parameters:
+    ///   - hex: 16进制颜色值
+    ///   - alpha: 不透明度
+    /// - Returns: 返回对应16进制色值的颜色
+    public convenience init?(hex: UInt, alpha: CGFloat = 1) {
         
         guard 0x000000...0xFFFFFF ~= hex else {
             return nil
@@ -31,7 +39,7 @@ public extension UIColor {
     ///   - hex: 16进制颜色值
     ///   - alpha: 不透明度
     /// - Returns: 返回对应16进制色值的颜色
-    public static func hex(_ hex: Int, alpha: CGFloat = 1) -> UIColor? {
+    public static func hex(_ hex: UInt, alpha: CGFloat = 1) -> UIColor? {
         return UIColor(hex: hex, alpha: alpha)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DPStyle
 
 // 推荐用法
 extension UIColor {
@@ -21,8 +22,8 @@ extension UIFont {
     static let pt30 = UIFont.size(30)
     static let pt66 = UIFont.size(66)
     
-    static let pt66_medium  = UIFont.medium.size(66)
-    static let pt66_bold    = UIFont.bold.size(66)
+    static let pt66_medium  = UIFont.medium(size: 66)
+    static let pt66_bold    = UIFont.bold(size: 66)
 }
 
 class ViewController: UITableViewController {
@@ -62,12 +63,12 @@ class ViewController: UITableViewController {
         print(String(format: "%p", UIFont.size(18)))
         print(String(format: "%p", UIFont.size(18)))
         print(String(format: "%p", UIFont.size(18)))
-        print(String(format: "%p", UIFont.medium.size(18)))
-        print(String(format: "%p", UIFont.medium.size(18)))
-        print(String(format: "%p", UIFont.medium.size(18)))
-        print(String(format: "%p", UIFont.regular.size(18)))
-        print(String(format: "%p", UIFont.regular.size(18)))
-        print(String(format: "%p", UIFont.regular.size(18)))
+        print(String(format: "%p", UIFont.medium(size: 18)))
+        print(String(format: "%p", UIFont.medium(size: 18)))
+        print(String(format: "%p", UIFont.medium(size: 18)))
+        print(String(format: "%p", UIFont.regular(size: 18)))
+        print(String(format: "%p", UIFont.regular(size: 18)))
+        print(String(format: "%p", UIFont.regular(size: 18)))
         
         print(String(format: "%p", UIFont.pt18))
         print(String(format: "%p", UIFont.pt18))
@@ -94,7 +95,10 @@ class ViewController: UITableViewController {
         UIFont.medium(size: 15)
         UIFont.medium(size: 15)
         
-        UIFont.bold.size(15)
+        UIFont.medium(size: 15);
+        UIFont.medium(size: 15)
+        
+        UIFont.bold(size: 15)
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,9 +126,9 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "DPColor Hex"
+            return "UIColor Hex"
         case 1:
-            return "DPFont 28pt"
+            return "UIFont 28pt"
         default:
             return "Unknown"
         }
@@ -165,48 +169,48 @@ class ViewController: UITableViewController {
             case 0:
                 cell.textLabel?.text        = "regular"
                 cell.detailTextLabel?.text  = "标准体"
-                cell.textLabel?.font        = UIFont.regular.size(28)
-                cell.detailTextLabel?.font  = UIFont.regular.size(28)
+                cell.textLabel?.font        = UIFont.regular(size: 28)
+                cell.detailTextLabel?.font  = UIFont.regular(size: 28)
             case 1:
                 cell.textLabel?.text        = "ultraLight"
                 cell.detailTextLabel?.text  = "超轻体"
-                cell.textLabel?.font        = UIFont.ultraLight.size(28)
-                cell.detailTextLabel?.font  = UIFont.ultraLight.size(28)
+                cell.textLabel?.font        = UIFont.ultraLight(size: 28)
+                cell.detailTextLabel?.font  = UIFont.ultraLight(size: 28)
             case 2:
                 cell.textLabel?.text        = "thin"
                 cell.detailTextLabel?.text  = "细体"
-                cell.textLabel?.font        = UIFont.thin.size(28)
-                cell.detailTextLabel?.font  = UIFont.thin.size(28)
+                cell.textLabel?.font        = UIFont.thin(size: 28)
+                cell.detailTextLabel?.font  = UIFont.thin(size: 28)
             case 3:
                 cell.textLabel?.text        = "light"
                 cell.detailTextLabel?.text  = "轻体"
-                cell.textLabel?.font        = UIFont.light.size(28)
-                cell.detailTextLabel?.font  = UIFont.light.size(28)
+                cell.textLabel?.font        = UIFont.light(size: 28)
+                cell.detailTextLabel?.font  = UIFont.light(size: 28)
             case 4:
                 cell.textLabel?.text        = "medium"
                 cell.detailTextLabel?.text  = "中体"
-                cell.textLabel?.font        = UIFont.medium.size(28)
-                cell.detailTextLabel?.font  = UIFont.medium.size(28)
+                cell.textLabel?.font        = UIFont.medium(size: 28)
+                cell.detailTextLabel?.font  = UIFont.medium(size: 28)
             case 5:
                 cell.textLabel?.text        = "semibold"
                 cell.detailTextLabel?.text  = "半粗体"
-                cell.textLabel?.font        = UIFont.semibold.size(28)
-                cell.detailTextLabel?.font  = UIFont.semibold.size(28)
+                cell.textLabel?.font        = UIFont.semibold(size: 28)
+                cell.detailTextLabel?.font  = UIFont.semibold(size: 28)
             case 6:
                 cell.textLabel?.text        = "bold"
                 cell.detailTextLabel?.text  = "粗体"
-                cell.textLabel?.font        = UIFont.bold.size(28)
-                cell.detailTextLabel?.font  = UIFont.bold.size(28)
+                cell.textLabel?.font        = UIFont.bold(size: 28)
+                cell.detailTextLabel?.font  = UIFont.bold(size: 28)
             case 7:
                 cell.textLabel?.text        = "heavy"
                 cell.detailTextLabel?.text  = "重体"
-                cell.textLabel?.font        = UIFont.heavy.size(28)
-                cell.detailTextLabel?.font  = UIFont.heavy.size(28)
+                cell.textLabel?.font        = UIFont.heavy(size: 28)
+                cell.detailTextLabel?.font  = UIFont.heavy(size: 28)
             case 8:
                 cell.textLabel?.text        = "black"
                 cell.detailTextLabel?.text  = "黑体"
-                cell.textLabel?.font        = UIFont.black.size(28)
-                cell.detailTextLabel?.font  = UIFont.black.size(28)
+                cell.textLabel?.font        = UIFont.black(size: 28)
+                cell.detailTextLabel?.font  = UIFont.black(size: 28)
             default:
                 cell.textLabel?.font        = UIFont.size(28)
                 cell.detailTextLabel?.font  = UIFont.size(28)
